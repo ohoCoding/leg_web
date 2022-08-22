@@ -37,8 +37,8 @@ const NavBar = styled.div`
   width: 100%;
   z-index: 1;
   background-color: rgba(185, 217, 243, 0.615);
-  padding: 10px 50px;
-  
+  padding: 10px 20px;
+  margin: 0;
 `;
 
 const NavLogo = styled.div`
@@ -53,7 +53,7 @@ const NavInput = styled.div`
   text-decoration: none;
   height: 30px;
   box-sizing: border-box;
-  margin: 10px 40px;
+  margin: 10px 10px;
   img{
     margin-right: 10px;
   }

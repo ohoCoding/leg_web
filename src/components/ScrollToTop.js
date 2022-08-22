@@ -32,7 +32,7 @@ export const ScrollTopButton = () => {
         <>
             {showTopBtn && (
                 <Wrapper onClick={e => goUp(e)}>
-                    <ArrowUpIcon width={20} />
+                    <ArrowUpIcon width={50} />
                     Top
                 </Wrapper>
             )}
@@ -49,8 +49,8 @@ export const ScrollToTop = () => {
 };
 
 const Wrapper = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 50%;
@@ -61,10 +61,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 13px;
-  right: 120px;
+  right: 25px;
   float: right;
   font-size: 12px;
-  bottom: 50px;
+  bottom: 90px;
   z-index: 999;
   color: ${({ theme }) => theme.gray600};
   svg > path {
