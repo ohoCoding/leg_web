@@ -5,21 +5,21 @@ import Home from "pages/home";
 const Routes = () => {
     const rootRoutes = {
         path: '/',
-        element: <Navigate to="/main" />,
+        element: <Home />,
         // element: <DefaultLayout />,
     };
 
     const noMatchRoutes = {
         path: '*',
-        element: <Navigate to="/main" />,
+        element: <Home />,
     };
 
-    const mainRoutes = {
-        path: '/main',
-        element: <Home />
-    }
+    // const mainRoutes = {
+    //     path: '/main',
+    //     element: <Home />
+    // }
 
-    const routes = [rootRoutes, noMatchRoutes, mainRoutes];
+    const routes = [rootRoutes, noMatchRoutes];
 
     return useRoutes(routes);
 };

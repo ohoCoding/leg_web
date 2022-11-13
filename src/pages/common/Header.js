@@ -1,49 +1,98 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "assets/icons/icon-search.svg";
 import Logo from 'logo.svg';
-import AppStore from "assets/icons/AppStore.svg";
-import GooglePlay from "assets/icons/GooglePlay.svg";
+// import AppStore from "assets/icons/AppStore.svg";
+import AppStore from "assets/images/AppStore.png";
+// import GooglePlay from "assets/icons/GooglePlay.svg";
+import GooglePlay from "assets/images/GooglePlay.png";
+import Modal from "components/Modal";
+import title from 'assets/images/title.png';
+import 'css/header.css';
 
 const Header = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  }
+
+  const closeModal = () => {
+    setModalOpen(false);
+  }
+  useEffect(() => {
+    const headerTag = document.querySelector("header")
+
+    document.addEventListener("scroll", function () {
+      const pixels = window.scrollY
+
+      if (pixels >= headerTag.getBoundingClientRect().height) {
+
+        headerTag.classList.add("scrolled")
+      } else {
+        headerTag.classList.remove("scrolled")
+      }
+    })
+
+
+  })
   return (
-    <NavBar>
+    <header className="header">
       <NavLogo>
-        <img src={Logo} width={40} />
+        <img src={title} width={120} height={20} />
       </NavLogo>
       {/* <NavInput>
         <StyledInput />
         <img src={SearchIcon} alt="돋보기" />
       </NavInput> */}
       <NavLink>
-        <a className="download" href="https://apps.apple.com/kr/app/pangyojangteo/id1018769995?l=ko&ls=1">
-          <img src={AppStore} alt="APP Store" width={20} />
-          <div className="button">App Store</div>
+        <a href="#!" className="download" onClick={openModal}>
+          <img src={AppStore} alt="APP Store" width={100} />
+          {/* <div className="button">App Store</div> */}
         </a>
-        <a className="download" href="https://play.google.com/store/apps/details?id=com.towneers.www">
-          <img src={GooglePlay} alt="Google Play" width={20} />
-          <div className="button">Google Play</div>
+        <a href="#!" className="download" onClick={openModal}>
+          <img src={GooglePlay} alt="Google Play" width={100} />
+          {/* <div className="button">Google Play</div> */}
         </a>
       </NavLink>
-    </NavBar>
+      {modalOpen &&
+        <Modal open={modalOpen} close={closeModal} header="Comming Soon!">
+          곧 만날 수 있어요 :)
+        </Modal>
+      }
+    </header>
   )
 }
 
-const NavBar = styled.div` 
-  position: sticky;
-  top: 0px;
+const NavBar = styled.header` 
+
   display: flex;
-  justify-content: space-between;
+  background-color: #fff;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 0 50px;
+  transition: all 0.5s;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 1;
-  background-color: rgba(185, 217, 243, 0.615);
-  padding: 10px 20px;
-  margin: 0;
+  height: 150px;
+  .scrolled {
+    background-color: #fff;
+    height: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 `;
 
 const NavLogo = styled.div`
-  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  height: 60px;
 `;
 
 const NavInput = styled.div`
@@ -66,16 +115,16 @@ const StyledInput = styled.input`
   width: 600px;
   font-size: 16px;
   font-weight: 500;
-  -webkit-appearance: none;
   margin-top: 3px;
   background-color: transparent;
 `
 
 const NavLink = styled.div`
   display: flex;
-  gap: 20px;
   align-items: center;
   justify-content: right;
+  flex-direction: row;
+  
   .download{
     width: 140px;
     border-radius: 5px;
@@ -88,7 +137,8 @@ const NavLink = styled.div`
     height: 40px;
     align-items: center;
     justify-content: center;
-
+    cursor: pointer;
+   
     .button{
       display: inline-block;
       color: #495057;
@@ -98,6 +148,6 @@ const NavLink = styled.div`
       vertical-align: middle;
     }
   }
-  
+
 `
 export default Header;
