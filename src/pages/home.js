@@ -42,7 +42,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const animatedTags = document.querySelectorAll(" a, h2, h3, p, section img, a.button")
+    const animatedTags = document.querySelectorAll("  h2, h3, p, section img, a.button")
 
     animatedTags.forEach(tag => {
       tag.style.opacity = 0
@@ -174,7 +174,7 @@ const Home = () => {
                   <h2 className="description4">
                     맛집 뚫기
                     <br />
-                    대👏👏작전
+                    대작전
                   </h2>
 
                   <section>
@@ -203,12 +203,12 @@ const Home = () => {
                 <img src={logo} alt="logo" width={100} height={20} />
               </section> */}
 
-              <h2 className="description5">
+              <h4 className="description5">
                 사전신청으로 렛잇고와 함께해요!👩🏻‍💻
-              </h2>
+              </h4>
               <div className="register">
 
-                <section
+                {/* <section
                   style={{
                     alignItems: 'center', float: 'left', flexDirection: 'column'
                   }}>
@@ -226,14 +226,16 @@ const Home = () => {
                       fontSize: isMobile ? 12 : 18,
                     }}>신청하기</button>
                   </a>
-                </section>
+                </section> */}
 
-                <section style={{
-                  alignItems: 'center', float: 'right', flexDirection: 'column'
-                }}>
-                  <img src={user} alt="user" width={100} height={20} />
-                  <h3 className="detail">사용자</h3>
-                  <a>
+                <a
+                  onClick={openModal}
+                  style={{
+                    alignItems: 'center', flexDirection: 'column'
+                  }}>
+                  <img src={user} alt="user" width={100} height={100} />
+                  <h4 className="detail">사용자</h4>
+                  {/* <a>
                     <button
                       onClick={openModal}
                       style={{
@@ -245,8 +247,8 @@ const Home = () => {
                         fontFamily: 'Apple SD Gothic Neo',
                         fontSize: isMobile ? 12 : 18,
                       }}>신청하기</button>
-                  </a>
-                </section>
+                  </a> */}
+                </a>
               </div>
             </div>
             <div className="image-wrap">
@@ -258,15 +260,15 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           <div className="inner">
             <div className="text-wrap6">
-              <h2 className="description6">
+              <a className="download" href="https://www.instagram.com/leteatgo_official/"><img width={10} src={instagram}></img></a>
+              <h4 className="description6">
                 회사 : 위로우 컴퍼니
                 <br />
                 대표자 : 권혁문
                 <br />
                 주소 : 서울 서초구 남부순환로339길 60 402호
                 <br />
-              </h2>
-              <a className="download" href="https://www.instagram.com/leteatgo_official/"><img width={10} src={instagram}></img></a>
+              </h4>
             </div>
           </div>
         </MainWrapper>
@@ -478,6 +480,7 @@ const MainWrapper = styled.div`
       font-weight: bold;
       align-items: center;
       justify-content: center;
+      text-align: center;
       font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 35 : 50)}px;
       font-family: Apple SD Gothic Neo;
       color: #ffff;
@@ -513,6 +516,27 @@ const MainWrapper = styled.div`
     height: 100%;
     flex-direction: ${props => props.isMobile ? 'column' : 'column'};
     margin : ${props => (props.isMobile ? '0px 50px' : '0px 25px')};
+    a {
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      img {
+        display: flex;
+        width: 60%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .detail {
+        font-weight: bold;
+        // height: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+        font-size: ${props => (props.isMobile ? 15 : props.isTablet ? 20 : 30)}px;
+        color: #000;
+        font-family: Apple SD Gothic Neo
+      }
+    }
     section {
       display: flex;
       align-items: center;
@@ -543,18 +567,7 @@ const MainWrapper = styled.div`
       flex-direction: row;
       height: ${props => (props.isMobile || props.isTablet ? '100%' : '100%')};
     }
-    .detail {
-      font-weight: bold;
-      height: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
-      font-size: ${props => (props.isMobile ? 12 : props.isTablet ? 20 : 30)}px;
-      color: #000;
-      font-family: Apple SD Gothic Neo
-
-      .info {
-        display: flex;
-        text-align: ${props => (props.isMobile ? 'center' : 'none')};
-      }
-    }
+    
   }
 
   .text-wrap6 {
@@ -591,12 +604,12 @@ const MainWrapper = styled.div`
 
     .description6 {
       display: flex;
-      font-weight: bold;
+      // font-weight: bold;
       align-items: center;
       justify-content: center;
       font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 15 : 15)}px;
       font-family: Apple SD Gothic Neo;
-      color: #000;
+      color: #00000087;
       .point-color {
         color: #00C1DE
       }

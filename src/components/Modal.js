@@ -23,7 +23,7 @@ const Modal = (props) => {
   const handleRegiser = async () => {
     await axios({
       method: 'post',
-      url: "/phones",
+      url: "https://0giri.com:30000/api/phones",
       data: {
         phone: phone
       },
