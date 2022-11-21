@@ -147,7 +147,7 @@ const Home = () => {
                     <br />
                     우리집도<span className="bold point-color"> #웨이팅_맛집 !</span>
                   </h2>
-                  <h3 className="detail">매일 다양한 할인/이벤트 혜택을 사장님이 직접 작성해봐요</h3>
+                  <h3 className="detail">매일 다양한 혜택을 사장님이 직접 작성해봐요</h3>
                 </div>
                 <div className="image-wrap">
                   <img src={banner3} alt="banner3" />
@@ -365,7 +365,7 @@ const MainWrapper = styled.div`
 
     .detail {
       font-weight: 200;
-      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 25)}px;
       color: #ffff;
       font-family: Apple SD Gothic Neo;
       
@@ -401,7 +401,7 @@ const MainWrapper = styled.div`
     .detail {
       font-weight: 200;
       font-family: Apple SD Gothic Neo;
-      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 25)}px;
       color: #000;
     }
 
@@ -434,7 +434,7 @@ const MainWrapper = styled.div`
 
     .detail {
       font-weight: 200;
-      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 18 : 18)}px;
+      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 25)}px;
       color: #000;
       font-family: Apple SD Gothic Neo
       
