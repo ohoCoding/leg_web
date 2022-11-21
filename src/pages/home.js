@@ -520,7 +520,7 @@ const MainWrapper = styled.div`
       cursor: pointer;
       display: flex;
       width: 100%;
-      height: 100%;
+      height: 85%;
       align-items: center;
       justify-content: center;
       img {
@@ -552,6 +552,7 @@ const MainWrapper = styled.div`
       }
     }
     .description5 {
+      padding-top: 10px;
       font-weight: bold;
       align-items: center;
       justify-content: center;
