@@ -206,7 +206,9 @@ const Home = () => {
               <h4 className="description5">
                 사전신청으로 렛잇고와 함께해요!👩🏻‍💻
               </h4>
-              <div className="register">
+              <div className="register"
+                onClick={openModal}
+              >
 
                 {/* <section
                   style={{
@@ -228,14 +230,14 @@ const Home = () => {
                   </a>
                 </section> */}
 
-                <a
+                {/* <section
                   onClick={openModal}
                   style={{
                     alignItems: 'center', flexDirection: 'column'
-                  }}>
-                  <img src={user} alt="user" width={100} height={100} />
-                  <h4 className="detail">사용자</h4>
-                  {/* <a>
+                  }}> */}
+                <img src={user} alt="user" width={100} height={100} />
+                <h4 className="detail">👈 여기를 클릭해주세요!</h4>
+                {/* <a>
                     <button
                       onClick={openModal}
                       style={{
@@ -248,7 +250,7 @@ const Home = () => {
                         fontSize: isMobile ? 12 : 18,
                       }}>신청하기</button>
                   </a> */}
-                </a>
+                {/* </section> */}
               </div>
             </div>
             <div className="image-wrap">
@@ -260,7 +262,7 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           <div className="inner">
             <div className="text-wrap6">
-              <a className="download" href="https://www.instagram.com/leteatgo_official/"><img width={10} src={instagram}></img></a>
+              <a className="download" href="https://www.instagram.com/leteatgo_official/"><img width={5} src={instagram}></img></a>
               <h4 className="description6">
                 회사 : 위로우 컴퍼니
                 <br />
@@ -526,13 +528,13 @@ const MainWrapper = styled.div`
       img {
         display: flex;
         width: 60%;
-        height: 100%;
+        // height: 100%;
         object-fit: contain;
       }
       .detail {
         font-weight: bold;
         // height: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
-        font-size: ${props => (props.isMobile ? 15 : props.isTablet ? 20 : 30)}px;
+        font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
         color: #000;
         font-family: Apple SD Gothic Neo
       }
@@ -542,6 +544,7 @@ const MainWrapper = styled.div`
       align-items: center;
       justify-content: center;
       width: ${props => (props.isMobile || props.isTablet ? '100%' : '80%')};
+      height: 80%;
       overflow-y: hidden;
       img {
         display: flex;
@@ -565,13 +568,34 @@ const MainWrapper = styled.div`
     }
     .register {
       display: flex;
-      flex-direction: row;
+      // flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
       height: ${props => (props.isMobile || props.isTablet ? '100%' : '100%')};
+      overflow-y: hidden;
+      
+      img {
+        display: flex;
+        width: 50%;
+        height: 80%;
+        object-fit: contain;
+        padding-right: 10px;
+      }
+
+      .detail {
+        font-weight: bold;
+        // height: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+        font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+        color: #000;
+        font-family: Apple SD Gothic Neo
+      }
     }
     
   }
 
   .text-wrap6 {
+    padding-top: 10px;
     display: flex;
     animation: fadein 1s;
     align-items: center;
