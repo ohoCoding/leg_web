@@ -24,7 +24,6 @@ const Modal = (props) => {
     // 숫자만 입력시
     var regExp = /^010\d{4}\d{4}$/;
     // 형식에 맞는 경우 true 리턴
-    console.log('핸드폰번호 유효성 검사 :: ', regExp.test(e.target.value))
     setValidate(regExp.test(e.target.value));
   }
 
@@ -56,7 +55,6 @@ const Modal = (props) => {
     })
   }
   useEffect(() => {
-    console.log(validate);
     window.addEventListener('click', handleClosemodal);
     return () => {
       window.removeEventListener('click', handleClosemodal);
@@ -134,11 +132,13 @@ const Modal = (props) => {
                 >
                 </input>
                 <footer>
-                  <button className="register" onClick={handleRegiser} style={{
-                    backgroundColor: agreeCheck === true && validate === true ? '#000' : 'white'
-                  }}>
-                    번호 등록
-                  </button>
+                  {
+                    agreeCheck === true && validate === true ?
+                      <button className="register" onClick={handleRegiser}>
+                        번호 등록
+                      </button> : null
+                  }
+
 
                 </footer>
               </section>

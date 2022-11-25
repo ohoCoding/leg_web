@@ -235,8 +235,8 @@ const Home = () => {
                   style={{
                     alignItems: 'center', flexDirection: 'column'
                   }}> */}
-                <img src={user} alt="user" width={100} height={100} />
-                <h4 className="detail">👈 여기를 클릭해주세요!</h4>
+                <img src={user} alt="user" width={100} height={100} style={{ cursor: "pointer" }} />
+                <h4 className="detail" style={{ cursor: 'pointer' }}>👈 여기를 클릭해주세요!</h4>
                 {/* <a>
                     <button
                       onClick={openModal}
