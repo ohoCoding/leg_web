@@ -81,7 +81,7 @@ const Modal = (props) => {
                 &times;
               </button> */}
                 </header>
-                <main>{props.children}</main>
+                <main style={{ fontSize: '20px' }}>{props.children}</main>
                 <footer>
                   <button className="close" onClick={close}>
                     OK!
@@ -122,11 +122,12 @@ const Modal = (props) => {
                     alignItems: 'center', justifyContent: 'center',
                     borderColor: validate === true ? 'blue' : 'red',
                     borderWidth: 5,
-                    borderRadius: 10
+                    borderRadius: 10,
+                    width: 250
                   }}
                   maxLength="11"
                   type='text'
-                  placeholder=" '-' 없이 숫자만 입력해주세요"
+                  placeholder=" '-' 없이 핸드폰 번호를 입력해주세요."
                   onChange={(e) => handleInput(e)}
                   onBlur={(e) => checkPhonenumber(e)}
                 >

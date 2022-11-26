@@ -205,9 +205,11 @@ const Home = () => {
 
               <h4 className="description5">
                 사전신청으로 렛잇고와 함께해요!👩🏻‍💻
+
               </h4>
+
               <div className="register"
-                onClick={openModal}
+
               >
 
                 {/* <section
@@ -235,8 +237,16 @@ const Home = () => {
                   style={{
                     alignItems: 'center', flexDirection: 'column'
                   }}> */}
-                <img src={user} alt="user" width={100} height={100} style={{ cursor: "pointer" }} />
-                <h4 className="detail" style={{ cursor: 'pointer' }}>👈 여기를 클릭해주세요!</h4>
+                <img src={user} alt="user" width={100} height={100} style={{ cursor: "pointer" }} onClick={openModal} />
+                <div className="detail" style={{ textAlign: 'center' }}>
+                  <h4>👈👈 여기를 클릭해주세요!</h4>
+                  <h5>
+                    지금 사전신청을 완료하면
+                    <br />
+                    앱 출시와 동시에 사전링크를 보내드려요!
+                  </h5>
+                </div>
+
                 {/* <a>
                     <button
                       onClick={openModal}
@@ -518,6 +528,9 @@ const MainWrapper = styled.div`
     height: 100%;
     flex-direction: ${props => props.isMobile ? 'column' : 'column'};
     margin : ${props => (props.isMobile ? '0px 50px' : '0px 25px')};
+    h5 {
+      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+    }
     a {
       cursor: pointer;
       display: flex;
@@ -531,13 +544,13 @@ const MainWrapper = styled.div`
         // height: 100%;
         object-fit: contain;
       }
-      .detail {
-        font-weight: bold;
-        // height: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
-        font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
-        color: #000;
-        font-family: Apple SD Gothic Neo
-      }
+      // .detail {
+      //   font-weight: bold;
+      //   width: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+      //   font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+      //   color: #000;
+      //   font-family: Apple SD Gothic Neo;
+      // }
     }
     section {
       display: flex;
@@ -585,7 +598,8 @@ const MainWrapper = styled.div`
 
       .detail {
         font-weight: bold;
-        // height: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+        // width: 300px;
+        width: ${props => (props.isMobile ? 300 : props.isTablet ? 500 : 650)}px;
         font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
         color: #000;
         font-family: Apple SD Gothic Neo
