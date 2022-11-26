@@ -121,7 +121,7 @@ const Modal = (props) => {
                   style={{
                     alignItems: 'center', justifyContent: 'center',
                     borderColor: validate === true ? 'blue' : 'red',
-                    borderWidth: 5,
+                    borderWidth: 2,
                     borderRadius: 10,
                     width: 250
                   }}
