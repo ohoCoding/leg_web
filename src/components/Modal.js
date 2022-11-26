@@ -6,21 +6,14 @@ import ClickOutside from "./ClickOutside";
 const Modal = (props) => {
   const { open, close, header, kind } = props;
   const [phone, setPhone] = useState('');
-  const [isOpen, setOpen] = useState(false);
-  const [isSucess, setIsSucess] = useState(false);
   const [agreeCheck, setAgreeCheck] = useState(false);
   const [validate, setValidate] = useState(false);
 
   const agreeValue = '개인정보 수집이용 및 제3자 제공에 동의합니다. 렛잇고는 개인정보보호법에 따라 본인의 동의를 얻어 사전등록 참여를 위해 개인정보를 수집 및 이용합니다. 1. 수집 이용 목적 : 사전 등록을 위함 2. 개인정보 수집 항목: 전화번호 3. 보유 및 이용기간: 이용목적 달성 후 1년 이내 폐기 4. 제공 받는 자: 렛잇고 * 개인정보 수집 이용에 대해 거부할 수 있으며 거부할 경우에는 사전등록이 불가함을 알려드립니다.'
   const outSection = useRef();
 
-  const handleClosemodal = (e) => {
-    if (isOpen && (!outSection.current || !outSection.current.contains(e.target)))
-      setOpen(false)
-  }
-
   const handleInput = (e) => {
-    setPhone(e.target.value)
+    setPhone(e.target.value);
     // 숫자만 입력시
     var regExp = /^010\d{4}\d{4}$/;
     // 형식에 맞는 경우 true 리턴
@@ -54,20 +47,7 @@ const Modal = (props) => {
     }).catch(err => {
     })
   }
-  useEffect(() => {
-    window.addEventListener('click', handleClosemodal);
-    return () => {
-      window.removeEventListener('click', handleClosemodal);
-    };
-  }, [validate])
 
-  const checkPhonenumber = (e) => {
-
-    // if (e.key === '.' || e.key === '-' || e.key >= 0 && e.key <= 9) {
-    //   return true;
-    // }
-    // return false;
-  }
   return (
     <ClickOutside onClickOutside={close}>
       <ModalWrapper ref={outSection}>
@@ -129,7 +109,6 @@ const Modal = (props) => {
                   type='text'
                   placeholder=" '-' 없이 핸드폰 번호를 입력해주세요."
                   onChange={(e) => handleInput(e)}
-                  onBlur={(e) => checkPhonenumber(e)}
                 >
                 </input>
                 <footer>
@@ -139,8 +118,6 @@ const Modal = (props) => {
                         번호 등록
                       </button> : null
                   }
-
-
                 </footer>
               </section>
             ) : null}

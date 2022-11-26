@@ -238,13 +238,13 @@ const Home = () => {
                     alignItems: 'center', flexDirection: 'column'
                   }}> */}
                 <img src={user} alt="user" width={100} height={100} style={{ cursor: "pointer" }} onClick={openModal} />
-                <div className="detail" style={{ textAlign: 'center' }}>
-                  <h4>👈👈 여기를 클릭해주세요!</h4>
+                <div className="detail">
                   <h5>
                     지금 사전신청을 완료하면
                     <br />
                     앱 출시와 동시에 사전링크를 보내드려요!
                   </h5>
+                  <h4>👈 여기를 클릭해주세요!</h4>
                 </div>
 
                 {/* <a>
@@ -593,16 +593,21 @@ const MainWrapper = styled.div`
         width: 50%;
         height: 80%;
         object-fit: contain;
-        padding-right: 10px;
       }
 
       .detail {
         font-weight: bold;
         // width: 300px;
         width: ${props => (props.isMobile ? 300 : props.isTablet ? 500 : 650)}px;
-        font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+        // font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
         color: #000;
-        font-family: Apple SD Gothic Neo
+        font-family: Apple SD Gothic Neo;
+        h5 {
+          font-size: ${props => (props.isMobile ? 5 : props.isTablet ? 15 : 20)}px;
+        }
+        h4 {
+          font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+        }
       }
     }
     
