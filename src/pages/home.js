@@ -42,7 +42,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const animatedTags = document.querySelectorAll(" h2, h3, p, div img, a.button")
+    const animatedTags = document.querySelectorAll(" h2, h3, p, section img, a.button")
 
     animatedTags.forEach(tag => {
       tag.style.opacity = 0
@@ -83,7 +83,10 @@ const Home = () => {
         <ScrollTopButton />
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {isMobile ?
-            <img src={mobilebanner1} alt="mobilebanner1" />
+            <section>
+              <img src={mobilebanner1} alt="mobilebanner1" />
+            </section>
+
             :
             <div className="inner">
               <div className="image-wrap">
@@ -111,7 +114,9 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {
             isMobile ?
-              <img src={mobilebanner2} alt="mobilebanner2" />
+              <section>
+                <img src={mobilebanner2} alt="mobilebanner2" />
+              </section>
               :
               <div className="inner">
                 <div className="image-wrap">
@@ -132,7 +137,9 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {
             isMobile ?
-              <img src={mobilebanner3} alt="mobilebanner3" />
+              <section>
+                <img src={mobilebanner3} alt="mobilebanner3" />
+              </section>
               :
               <div className="inner">
                 <div className="image-wrap">
@@ -154,7 +161,10 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {
             isMobile ?
-              <img src={mobilebanner4} alt="mobilebanner4" />
+              <section>
+                <img src={mobilebanner4} alt="mobilebanner4" />
+              </section>
+
               :
               <div className="inner">
                 <div className="image-wrap">
@@ -200,7 +210,6 @@ const Home = () => {
 
               <h4 className="description5">
                 사전신청으로 렛잇고와 함께해요!👩🏻‍💻
-
               </h4>
 
               <section className="register">
