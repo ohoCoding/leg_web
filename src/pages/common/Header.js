@@ -56,7 +56,7 @@ const Header = () => {
         </a>
       </NavLink>
       {modalOpen &&
-        <Modal open={modalOpen} close={closeModal} header="Comming Soon!">
+        <Modal open={modalOpen} close={closeModal} header="Coming Soon!">
           곧 만날 수 있어요 :)
         </Modal>
       }

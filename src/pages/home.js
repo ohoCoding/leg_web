@@ -42,7 +42,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const animatedTags = document.querySelectorAll("  h2, h3, p, section img, a.button")
+    const animatedTags = document.querySelectorAll(" h2, h3, p, div img, a.button")
 
     animatedTags.forEach(tag => {
       tag.style.opacity = 0
@@ -56,7 +56,7 @@ const Home = () => {
 
         if (tagTop < window.innerHeight && tagBottom > 0) {
 
-          tag.style.animation = `fadein 2s ${delay}s both`
+          tag.style.animation = `fadein 1s ${delay}s both`
           delay = delay + 0.3
         } else {
           tag.style.opacity = 0
@@ -83,16 +83,16 @@ const Home = () => {
         <ScrollTopButton />
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {isMobile ?
-            <section>
-              <img src={mobilebanner1} alt="mobilebanner1" />
-            </section>
+            <img src={mobilebanner1} alt="mobilebanner1" />
             :
             <div className="inner">
+              <div className="image-wrap">
+                <img src={banner1} alt="banner1" />
+              </div>
               <div className="text-wrap1">
-
-                <section>
+                <div>
                   <img src={logo} alt="logo" width={100} height={20} />
-                </section>
+                </div>
 
                 <h2 className="description1">
                   배달팁 부담스럽다면
@@ -102,9 +102,7 @@ const Home = () => {
                 </h2>
                 <h3 className="detail">동네가게의 포장 할인 / 이벤트 총 집합</h3>
               </div>
-              <div className="image-wrap">
-                <img src={banner1} alt="banner1" />
-              </div>
+
             </div>
 
           }
@@ -113,9 +111,7 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {
             isMobile ?
-              <section>
-                <img src={mobilebanner2} alt="mobilebanner2" />
-              </section>
+              <img src={mobilebanner2} alt="mobilebanner2" />
               :
               <div className="inner">
                 <div className="image-wrap">
@@ -136,11 +132,12 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {
             isMobile ?
-              <section>
-                <img src={mobilebanner3} alt="mobilebanner3" />
-              </section>
+              <img src={mobilebanner3} alt="mobilebanner3" />
               :
               <div className="inner">
+                <div className="image-wrap">
+                  <img src={banner3} alt="banner3" />
+                </div>
                 <div className="text-wrap3">
                   <h2 className="description3">
                     간편한 게시글 수정을 통해
@@ -149,9 +146,7 @@ const Home = () => {
                   </h2>
                   <h3 className="detail">매일 다양한 혜택을 사장님이 직접 작성해봐요</h3>
                 </div>
-                <div className="image-wrap">
-                  <img src={banner3} alt="banner3" />
-                </div>
+
               </div>
           }
         </MainWrapper>
@@ -159,11 +154,12 @@ const Home = () => {
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
           {
             isMobile ?
-              <section>
-                <img src={mobilebanner4} alt="mobilebanner4" />
-              </section>
+              <img src={mobilebanner4} alt="mobilebanner4" />
               :
               <div className="inner">
+                <div className="image-wrap">
+                  <img src={banner4} alt="banner4" />
+                </div>
                 <div className="text-wrap4">
                   {/* <section>
                     <img src={banner4_title} alt="banner4_title" width={40} height={20} />
@@ -174,7 +170,9 @@ const Home = () => {
                   <h2 className="description4">
                     맛집 뚫기
                     <br />
-                    대작전
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      대<hr class="bar" style={{ flex: 'auto', border: 'solid', height: '1px' }}></hr>작전
+                    </div>
                   </h2>
 
                   <section>
@@ -188,9 +186,6 @@ const Home = () => {
                   <h3 className="info">contact@werow.co.kr</h3>
                 </div>
 
-                <div className="image-wrap">
-                  <img src={banner4} alt="banner4" />
-                </div>
               </div>
           }
 
@@ -208,10 +203,12 @@ const Home = () => {
 
               </h4>
 
-              <div className="register"
-
-              >
-
+              <section className="register">
+                <h4>
+                  지금 사전신청을 완료하면
+                  <br />
+                  앱 출시와 동시에 사전링크를 보내드려요!
+                </h4>
                 {/* <section
                   style={{
                     alignItems: 'center', float: 'left', flexDirection: 'column'
@@ -238,39 +235,19 @@ const Home = () => {
                     alignItems: 'center', flexDirection: 'column'
                   }}> */}
                 <img src={user} alt="user" width={100} height={100} style={{ cursor: "pointer" }} onClick={openModal} />
-                <div className="detail">
-                  <h5>
-                    지금 사전신청을 완료하면
-                    <br />
-                    앱 출시와 동시에 사전링크를 보내드려요!
-                  </h5>
-                  <h4>👈 여기를 클릭해주세요!</h4>
-                </div>
+                {/* <div className="detail"> */}
 
-                {/* <a>
-                    <button
-                      onClick={openModal}
-                      style={{
-                        borderRadius: 50,
-                        backgroundColor: '#00C1DE',
-                        width: isMobile ? 60 : 100,
-                        height: isMobile ? 25 : 50,
-                        fontWeight: 'bold',
-                        fontFamily: 'Apple SD Gothic Neo',
-                        fontSize: isMobile ? 12 : 18,
-                      }}>신청하기</button>
-                  </a> */}
-                {/* </section> */}
-              </div>
+
+                <h5>☝ 여기를 클릭해주세요!</h5>
+                {/* </div> */}
+              </section>
             </div>
-            <div className="image-wrap">
-              <img src={banner5} alt="banner5" />
-            </div>
+
           </div>
         </MainWrapper>
 
         <MainWrapper isMobile={isMobile} isTablet={isTablet}>
-          <div className="inner">
+          <div className="inner" style={{ backgroundColor: '#E7E7E6' }}>
             <div className="text-wrap6">
               <a className="download" href="https://www.instagram.com/leteatgo_official/"><img width={5} src={instagram}></img></a>
               <h4 className="description6">
@@ -282,12 +259,14 @@ const Home = () => {
                 <br />
               </h4>
             </div>
+            {/* <div className="image-wrap">
+              <img src={banner5} alt="banner5" />
+            </div> */}
           </div>
         </MainWrapper>
 
         {modalOpen &&
           <Modal open={modalOpen} close={closeModal} header="사전 신청" kind="register">
-            곧 봐요! LET EAT GO!
           </Modal>
         }
       </Body>
@@ -337,6 +316,7 @@ const MainWrapper = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: contain;
     }
   }
 
@@ -501,6 +481,9 @@ const MainWrapper = styled.div`
       .point-color {
         color: #00C1DE
       }
+      h3 {
+        
+      }
     }
 
     .detail {
@@ -521,15 +504,20 @@ const MainWrapper = styled.div`
 
   .text-wrap5 {
     display: flex;
-    position: absolute;
+    position: relative;
     animation: fadein 1s;
     align-items: center;
     justify-content: center;
     height: 100%;
     flex-direction: ${props => props.isMobile ? 'column' : 'column'};
     margin : ${props => (props.isMobile ? '0px 50px' : '0px 25px')};
+    h4 {
+      text-align: center;
+      font-size: ${props => (props.isMobile ? 13 : props.isTablet ? 20 : 30)}px;
+    }
     h5 {
-      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 20 : 30)}px;
+      text-align: center;
+      font-size: ${props => (props.isMobile ? 15 : props.isTablet ? 20 : 30)}px;
     }
     a {
       cursor: pointer;
@@ -561,7 +549,7 @@ const MainWrapper = styled.div`
       overflow-y: hidden;
       img {
         display: flex;
-        width: 40%;
+        width: 50%;
         height: 100%;
         object-fit: contain;
   
@@ -572,7 +560,7 @@ const MainWrapper = styled.div`
       font-weight: bold;
       align-items: center;
       justify-content: center;
-      font-size: ${props => (props.isMobile ? 12 : props.isTablet ? 25 : 25)}px;
+      font-size: ${props => (props.isMobile ? 15 : props.isTablet ? 25 : 25)}px;
       font-family: Apple SD Gothic Neo;
       color: #000;
       .point-color {
@@ -581,20 +569,13 @@ const MainWrapper = styled.div`
     }
     .register {
       display: flex;
-      // flex-direction: column;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 100%;
       height: ${props => (props.isMobile || props.isTablet ? '100%' : '100%')};
       overflow-y: hidden;
-      
-      img {
-        display: flex;
-        width: 50%;
-        height: 80%;
-        object-fit: contain;
-      }
-
+  
       .detail {
         font-weight: bold;
         // width: 300px;
@@ -622,7 +603,7 @@ const MainWrapper = styled.div`
     text-align: center;
     height: 100%;
     flex-direction: ${props => props.isMobile ? 'column' : 'column'};
-    margin : ${props => (props.isMobile ? '0px 50px' : '0px 150px')};
+    margin : ${props => (props.isMobile ? '0px 50px' : '0px 0px')};
     section {
       display: flex;
       align-items: center;
@@ -631,7 +612,7 @@ const MainWrapper = styled.div`
       overflow-y: hidden;
       img {
         display: flex;
-        width: 40%;
+        width: 50%;
         height: 100%;
         object-fit: contain;
   
@@ -651,7 +632,7 @@ const MainWrapper = styled.div`
       // font-weight: bold;
       align-items: center;
       justify-content: center;
-      font-size: ${props => (props.isMobile ? 10 : props.isTablet ? 15 : 15)}px;
+      font-size: ${props => (props.isMobile ? 12 : props.isTablet ? 15 : 15)}px;
       font-family: Apple SD Gothic Neo;
       color: #00000087;
       .point-color {
